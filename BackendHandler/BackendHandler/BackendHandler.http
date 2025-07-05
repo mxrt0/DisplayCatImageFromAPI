@@ -1,6 +1,6 @@
 @BackendHandler_HostAddress = http://localhost:5206
 
-GET {{BackendHandler_HostAddress}}/weatherforecast/
+GET {{BackendHandler_HostAddress}}/api/cat/image
 Accept: application/json
 
 ###

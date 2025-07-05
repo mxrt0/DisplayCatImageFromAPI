@@ -8,14 +8,27 @@ namespace BackendHandler
 
             // Add services to the container.
 
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(policy =>
+                {
+                    policy.AllowAnyOrigin()    
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                });
+            });
+
+            builder.Services.AddHttpClient();
+
             builder.Services.AddControllers();
 
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
 
-            app.UseAuthorization();
+            app.UseCors();
 
+            app.UseAuthorization();
 
             app.MapControllers();
 

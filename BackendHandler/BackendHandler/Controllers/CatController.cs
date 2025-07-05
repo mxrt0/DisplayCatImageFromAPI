@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace BackendHandler.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class CatController : ControllerBase
     {
         private readonly HttpClient _httpClient;
